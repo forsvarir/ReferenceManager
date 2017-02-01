@@ -3,3 +3,5 @@ Database Migrations
     Add-Migration Url
     Update-Database
 
+VS2015 - Localdb
+    (localdb)\mssqllocaldb

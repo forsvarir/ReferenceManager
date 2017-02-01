@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 using ReferenceManager.Views;
+using ReferenceManager.Services;
 
 namespace ReferenceManager
 {
@@ -21,6 +22,7 @@ namespace ReferenceManager
         {
             base.ConfigureContainer();
 
+            Container.RegisterInstance<IBookService>(new BookService());
             Container.RegisterTypeForNavigation<AddAuthor>("AddAuthor");
         }
     }

@@ -20,6 +20,8 @@ namespace ReferenceManager
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+
+            Container.RegisterTypeForNavigation<AddAuthor>("AddAuthor");
         }
     }
 }

@@ -1,0 +1,5 @@
+Database Migrations
+    Enable-Migrations
+    Add-Migration Url
+    Update-Database
+

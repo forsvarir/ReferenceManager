@@ -1,0 +1,55 @@
+Possible database structures (information to store):
+
+    Author
+        AuthorId
+        Name
+    
+    Location
+        LocationId
+        QuickName
+        Room
+        Shelf
+
+    Publisher
+        PublisherId
+        Name
+        Location
+
+    Book
+        BookId
+        Title        
+
+    Published  - A book may be published more than once, by different publishers (usually in different years?)
+        BookId
+        PublishedYear
+        PublishderId
+
+
+    BookLocation
+        BookId
+        LocationId
+
+    Image
+        ImageId
+        ImageData
+        ?Name?
+
+
+
+Project Structure:
+
+    Initially start with three layers:
+
+        WPF frontend (V)
+            This will be a minimal WPF frontend, delegating where possible to the transformation layer for any complex mapping / transformations
+
+        TransformationLayer (VM)
+            Manage the model, performing any translation / additions required in order to support a functional gui
+
+        Service Layer (M)
+            Initially this will be implemented as a class library that uses EF to store data.  There is a possibility that this may need to support an alternative
+            approach so that the database can be shared and possibly accessed via WCF.
+
+Testing:
+
+    Start with manual testing through the GUI and see how it pans out, at what point does unit-testing start to add benefits.

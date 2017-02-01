@@ -1,0 +1,6 @@
+* As a student I want to be able to store information about books in my collection
+* As a student I want to be able to create references based on stored book information
+* As a student I want to be able to write comments associated with books in my collection
+* As a student I want to be able to create custom categories and assign them to books in my collection.
+* As a student I want to be able to search my book collection by title
+* As a student I want to be able to view my book collection by category.

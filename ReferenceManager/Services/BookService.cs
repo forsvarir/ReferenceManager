@@ -10,6 +10,7 @@ namespace ReferenceManager.Services
     public interface IBookService
     {
         void AddAuthor(Author author);
+        List<Author> FindAuthors();
     }
 
     public class BookService : IBookService
@@ -20,6 +21,14 @@ namespace ReferenceManager.Services
             {
                 db.Authors.Add(author);
                 db.SaveChanges();
+            }
+        }
+
+        public List<Author> FindAuthors()
+        {
+            using(var db = new BookContext())
+            {
+                return db.Authors.ToList();
             }
         }
     }

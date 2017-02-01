@@ -23,7 +23,9 @@ namespace ReferenceManager
             base.ConfigureContainer();
 
             Container.RegisterInstance<IBookService>(new BookService());
+
             Container.RegisterTypeForNavigation<AddAuthor>("AddAuthor");
+            Container.RegisterTypeForNavigation<ListAuthors>();
         }
     }
 }

@@ -24,6 +24,7 @@
                 </MenuItem>
                 <MenuItem Header="_Author">
                     <MenuItem Header="_Add" Command="{Binding NavigateCommand}" CommandParameter="AddAuthor"/>
+                    <MenuItem Header="_List" Command="{Binding NavigateCommand}" CommandParameter="ListAuthors"/>
                 </MenuItem>
                 <MenuItem Header="_Publisher">
                 </MenuItem>

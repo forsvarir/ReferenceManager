@@ -10,20 +10,10 @@ using System.Threading.Tasks;
 
 namespace ReferenceManager.ViewModels
 {
-    public class ListAuthorsViewModel : BindableBase, IActiveAware
+    class ListLocationsViewModel : BindableBase, IActiveAware
     {
-        private IBookService _bookService;
-
-        public event EventHandler IsActiveChanged;
-
-        List<Author> _authors;
-
-        public List<Author> Authors { get { return _authors; } private set {
-                SetProperty(ref _authors, value);
-            }
-        }
-
         private bool _isActive;
+        private IBookService _bookService;
 
         public bool IsActive
         {
@@ -34,13 +24,13 @@ namespace ReferenceManager.ViewModels
 
             set
             {
-                if(_isActive != value)
+                if (_isActive != value)
                 {
                     _isActive = value;
 
                     if (_isActive)
                     {
-                        Authors = _bookService.FindAuthors();
+                        Locations = _bookService.FindLocations();
                     }
 
                     IsActiveChanged?.Invoke(this, EventArgs.Empty);
@@ -48,11 +38,25 @@ namespace ReferenceManager.ViewModels
             }
         }
 
-        public ListAuthorsViewModel(IBookService bookService)
+        public event EventHandler IsActiveChanged;
+
+        List<Location> _locations;
+
+        public List<Location> Locations
+        {
+            get { return _locations; }
+            private set
+            {
+                SetProperty(ref _locations, value);
+            }
+        }
+
+
+        public ListLocationsViewModel(IBookService bookService)
         {
             _bookService = bookService;
 
-            Authors = _bookService.FindAuthors();
+            Locations = _bookService.FindLocations();
         }
 
 

@@ -2,7 +2,7 @@ Possible database structures (information to store):
 
     Author
         AuthorId
-        Name
+        Name                -- Does this need to be split into Surname/Forename
     
     Location
         LocationId

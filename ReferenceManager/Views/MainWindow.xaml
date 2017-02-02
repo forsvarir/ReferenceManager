@@ -21,12 +21,16 @@
                 <MenuItem Header="_Book">
                 </MenuItem>
                 <MenuItem Header="_Location">
+                    <MenuItem Header="_Add" Command="{Binding NavigateCommand}" CommandParameter="AddLocation"/>
+                    <MenuItem Header="_List" Command="{Binding NavigateCommand}" CommandParameter="ListLocations"/>
                 </MenuItem>
                 <MenuItem Header="_Author">
                     <MenuItem Header="_Add" Command="{Binding NavigateCommand}" CommandParameter="AddAuthor"/>
                     <MenuItem Header="_List" Command="{Binding NavigateCommand}" CommandParameter="ListAuthors"/>
                 </MenuItem>
                 <MenuItem Header="_Publisher">
+                    <MenuItem Header="_Add" Command="{Binding NavigateCommand}" CommandParameter="AddPublisher"/>
+                    <MenuItem Header="_List" Command="{Binding NavigateCommand}" CommandParameter="ListPublishers"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>

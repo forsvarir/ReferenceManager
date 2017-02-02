@@ -26,6 +26,10 @@ namespace ReferenceManager
 
             Container.RegisterTypeForNavigation<AddAuthor>("AddAuthor");
             Container.RegisterTypeForNavigation<ListAuthors>();
+            Container.RegisterTypeForNavigation<AddLocation>();
+            Container.RegisterTypeForNavigation<ListLocations>();
+            Container.RegisterTypeForNavigation<AddPublisher>();
+            Container.RegisterTypeForNavigation<ListPublishers>();
         }
     }
 }

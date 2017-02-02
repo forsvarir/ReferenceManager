@@ -11,6 +11,10 @@ namespace ReferenceManager.Services
     {
         void AddAuthor(Author author);
         List<Author> FindAuthors();
+        void AddLocation(Location location);
+        List<Location> FindLocations();
+        void AddPublisher(Publisher publishers);
+        List<Publisher> FindPublishers();
     }
 
     public class BookService : IBookService
@@ -24,11 +28,45 @@ namespace ReferenceManager.Services
             }
         }
 
+        public void AddLocation(Location location)
+        {
+            using (var db = new BookContext())
+            {
+                db.Locations.Add(location);
+                db.SaveChanges();
+            }
+        }
+
+        public void AddPublisher(Publisher publisher)
+        {
+            using (var db = new BookContext())
+            {
+                db.Publishers.Add(publisher);
+                db.SaveChanges();
+            }
+        }
+
         public List<Author> FindAuthors()
         {
             using(var db = new BookContext())
             {
                 return db.Authors.ToList();
+            }
+        }
+
+        public List<Location> FindLocations()
+        {
+            using (var db = new BookContext())
+            {
+                return db.Locations.ToList();
+            }
+        }
+
+        public List<Publisher> FindPublishers()
+        {
+            using (var db = new BookContext())
+            {
+                return db.Publishers.ToList();
             }
         }
     }

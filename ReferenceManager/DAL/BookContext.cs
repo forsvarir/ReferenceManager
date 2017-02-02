@@ -12,5 +12,7 @@ namespace ReferenceManager.DAL
         public BookContext() : base("ReferenceDB") { }
 
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
     }
 }

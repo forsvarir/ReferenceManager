@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ReferenceManager.Views.AddLocation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReferenceManager.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="20,20,20,20" >
+            <Label Content="{Binding Status}" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Quick Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="QuickName" Text="{Binding QuickName, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Room" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="Room" Text="{Binding Room, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Shelf" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="Shelf" Text="{Binding Shelf, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="Add" Content="_Add" HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Bottom" Width="75" Command="{Binding AddCommand}"/>
+    </Grid>
+</UserControl>

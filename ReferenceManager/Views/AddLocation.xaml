@@ -10,17 +10,17 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="20,20,20,20" >
-            <Label Content="{Binding Status}" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
+            <TextBlock Text="{Binding Status}" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Quick Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Text="Quick Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBox x:Name="QuickName" Text="{Binding QuickName, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Room" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Text="Room" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBox x:Name="Room" Text="{Binding Room, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Shelf" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Text="Shelf" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBox x:Name="Shelf" Text="{Binding Shelf, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"/>
             </StackPanel>
         </StackPanel>

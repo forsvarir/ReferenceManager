@@ -9,8 +9,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Label Content="{Binding Status}" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
-        <Label Content="Author Name" HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top"/>
+        <TextBlock Text="{Binding Status}" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock Text="Author Name" HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="AuthorName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="23" Margin="123,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Add" Content="_Add" HorizontalAlignment="Left" Margin="168,196,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
     </Grid>

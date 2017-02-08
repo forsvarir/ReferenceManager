@@ -30,6 +30,10 @@ namespace ReferenceManager
             Container.RegisterTypeForNavigation<ListLocations>();
             Container.RegisterTypeForNavigation<AddPublisher>();
             Container.RegisterTypeForNavigation<ListPublishers>();
+
+
+
+            Container.RegisterTypeForNavigation<ListItems>();
         }
     }
 }

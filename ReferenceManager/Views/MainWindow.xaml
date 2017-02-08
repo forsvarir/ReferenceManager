@@ -7,7 +7,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:local="clr-namespace:ReferenceManager"
         mc:Ignorable="d"
-        Title="Reference Manager" Height="350" Width="525">
+        Title="Reference Manager" Height="800" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -32,7 +32,12 @@
                     <MenuItem Header="_Add" Command="{Binding NavigateCommand}" CommandParameter="AddPublisher"/>
                     <MenuItem Header="_List" Command="{Binding NavigateCommand}" CommandParameter="ListPublishers"/>
                 </MenuItem>
+                <MenuItem Header="_Test">
+                    <MenuItem Header="List_Authors" Command="{Binding NavigateCommand}" CommandParameter="ListItems?contentType=Author"/>
+                    <MenuItem Header="_ListLocations" Command="{Binding NavigateCommand}" CommandParameter="ListItems?contentType=Location"/>
+                </MenuItem>
             </Menu>
+
             <StackPanel></StackPanel>
         </DockPanel>
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion"/>

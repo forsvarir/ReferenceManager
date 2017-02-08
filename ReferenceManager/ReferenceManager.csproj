@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ListItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListLocations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,6 +155,7 @@
     <Compile Include="ViewModels\AddLocationViewModel.cs" />
     <Compile Include="ViewModels\AddPublisherViewModel.cs" />
     <Compile Include="ViewModels\ListAuthorsViewModel.cs" />
+    <Compile Include="ViewModels\ListItemsViewModel.cs" />
     <Compile Include="ViewModels\ListLocationsViewModel.cs" />
     <Compile Include="ViewModels\ListPublishersViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -165,6 +170,9 @@
     </Compile>
     <Compile Include="Views\ListAuthors.xaml.cs">
       <DependentUpon>ListAuthors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListItems.xaml.cs">
+      <DependentUpon>ListItems.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListLocations.xaml.cs">
       <DependentUpon>ListLocations.xaml</DependentUpon>

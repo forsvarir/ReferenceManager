@@ -137,6 +137,7 @@
     <Compile Include="DAL\BookContext.cs" />
     <Compile Include="DAL\Location.cs" />
     <Compile Include="DAL\Publisher.cs" />
+    <Compile Include="Helpers\SuppressDisplayAttribute.cs" />
     <Compile Include="Migrations\201702011546086_InitialCreate.cs" />
     <Compile Include="Migrations\201702011546086_InitialCreate.Designer.cs">
       <DependentUpon>201702011546086_InitialCreate.cs</DependentUpon>

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ReferenceManager.Helpers;
 
 namespace ReferenceManager.DAL
 {
     public class Author
     {
+        [SuppressDisplay]
         public int AuthorId { get; set; }
         public string Name { get; set; }
     }

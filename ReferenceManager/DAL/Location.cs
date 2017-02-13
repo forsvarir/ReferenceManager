@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ReferenceManager.Helpers;
+using System.ComponentModel;
 
 namespace ReferenceManager.DAL
 {
@@ -8,6 +9,7 @@ namespace ReferenceManager.DAL
         {
         }
 
+        [SuppressDisplay]
         public int LocationId { get; set; }
         [DisplayName("Name")]
         public string QuickName { get; set; }

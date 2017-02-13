@@ -1,15 +1,12 @@
 ﻿using Prism;
 using Prism.Mvvm;
 using Prism.Regions;
-using ReferenceManager.DAL;
+using ReferenceManager.Helpers;
 using ReferenceManager.Services;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReferenceManager.ViewModels
 {
@@ -21,6 +18,7 @@ namespace ReferenceManager.ViewModels
 
     class ListItemsViewModel : BindableBase, IActiveAware, INavigationAware
     {
+        const string _modelNamespace = "ReferenceManager.DAL.";
         private bool _isActive;
         private IBookService _bookService;
 
@@ -73,7 +71,7 @@ namespace ReferenceManager.ViewModels
         private void SetupColumnDefinitions(Type dataType)
         {
             ColumnDefinitions.Clear();
-            foreach (var property in dataType.GetProperties())
+            foreach (var property in dataType.GetProperties().Where(x=>Attribute.GetCustomAttribute(x, typeof(SuppressDisplayAttribute))==null))
             {
                 var attribute = Attribute.GetCustomAttribute(property, typeof(DisplayNameAttribute)) as DisplayNameAttribute;
                 ColumnDefinitions.Add(new ColumnDescriptor { HeaderText = null == attribute ? property.Name : attribute.DisplayName, DisplayMember = property.Name });
@@ -82,18 +80,11 @@ namespace ReferenceManager.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            var contentType = navigationContext.Parameters["contentType"] as string;
-            switch(contentType)
-            {
-                case "Author":
-                    Items = _bookService.FindAuthors();
-                    SetupColumnDefinitions(typeof(Author));
-                    break;
-                case "Location":
-                    Items = _bookService.FindLocations();
-                    SetupColumnDefinitions(typeof(Location));
-                    break;
-            }
+            var contentTypeName = navigationContext.Parameters["contentType"] as string;
+
+            var contentType = Type.GetType(_modelNamespace + contentTypeName);
+            Items = _bookService.GetType().GetMethod("Find" + contentTypeName + "s").Invoke(_bookService, null);
+            SetupColumnDefinitions(contentType);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -103,7 +94,6 @@ namespace ReferenceManager.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            Console.WriteLine(navigationContext.Uri);
         }
     }
 }

@@ -12,7 +12,7 @@
         <ListView ItemsSource="{Binding Locations}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Quick Name" Width="auto" DisplayMemberBinding="{Binding QuickName}" />
+                    <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding QuickName}" />
                     <GridViewColumn Header="Room" Width="auto" DisplayMemberBinding="{Binding Room}" />
                     <GridViewColumn Header="Shelf" Width="auto" DisplayMemberBinding="{Binding Shelf}" />
                 </GridView>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReferenceManager.Views"
+             xmlns:viewhelpers="clr-namespace:ReferenceManager.ViewHelpers"
              mc:Ignorable="d" 
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
@@ -11,14 +12,10 @@
     <Grid>
         <ListView ItemsSource="{Binding Items}">
             <ListView.View>
-                <GridView local:GridViewColumnCollection.HeaderTextMember="HeaderText" 
-                          local:GridViewColumnCollection.DisplayMemberMember="DisplayMember"
-                        local:GridViewColumnCollection.ColumnsSource="{Binding ColumnDefinitions}">
+                <GridView viewhelpers:GridViewColumnCollection.HeaderTextMember="HeaderText" 
+                          viewhelpers:GridViewColumnCollection.DisplayMemberMember="DisplayMember"
+                        viewhelpers:GridViewColumnCollection.ColumnsSource="{Binding ColumnDefinitions}">
                 </GridView>
-                <!--<GridView local:GridViewColumns.HeaderTextMember="HeaderText" 
-                          local:GridViewColumns.DisplayMemberMember="DisplayMember"
-                        local:GridViewColumns.ColumnsSource="{Binding Columns}">
-                </GridView>-->
             </ListView.View>
         </ListView>
     </Grid>

@@ -152,6 +152,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\BookService.cs" />
+    <Compile Include="ViewHelpers\GridViewColumnCollection.cs" />
+    <Compile Include="ViewHelpers\GridViewColumnCollectionBehaviour.cs" />
     <Compile Include="ViewModels\AddAuthorViewModel.cs" />
     <Compile Include="ViewModels\AddLocationViewModel.cs" />
     <Compile Include="ViewModels\AddPublisherViewModel.cs" />
